@@ -63,7 +63,8 @@ def signup(user_accounts, log_in, bank):
 
     Output:
         (boolean): Return True if the username and password are valid and the user is successfully signed up.
-        Return False otherwise.'''
+        Return False otherwise.
+    '''
     
     username = input('Please provide your name: ')
     print("Pls provide at least 8chars long password. It should contain at least one uppercase, lowercase and numbers\n")
@@ -80,6 +81,7 @@ def signup(user_accounts, log_in, bank):
 #==========================================================================================================================
 
 def login(user_accounts, log_in):
+
     '''
     This function allows users to log in with their username and password.
     The user_accounts dictionary stores the username and associated password.
@@ -90,11 +92,8 @@ def login(user_accounts, log_in):
     Otherwise:
     - Updates the user's log-in status in the log_in dictionary, setting the value to True.
     - Returns True.
-
-    For example:
-    - Calling login(user_accounts, "Brandon", "123abcAB") will return False
-    - Calling login(user_accounts, "Brandon", "brandon123ABC") will return True
     '''
+    
     username = input('Please provide your name: ')
     
     if username in user_accounts:
@@ -162,6 +161,7 @@ def import_and_create_accounts(filename, user_accounts, log_in, bank):
 #==========================================================================================================================
 
 def deposit(bank, log_in):
+
     '''
     This function will credit the given user's bank account with the given amount.
     bank is a dictionary where the key is the username and the value is the user's account balance.
@@ -283,6 +283,7 @@ def transfer(user_accounts, bank, log_in):
 
     Return True if a transfer is made.
     '''
+    
     userA = input('Please provide your bank account name: ')
     userB = input('Please provide receiver\'s bank account name: ')
     amount = float(input('How much do you want to transfer: '))
@@ -303,6 +304,7 @@ def transfer(user_accounts, bank, log_in):
 #==========================================================================================================================
 
 def change_password(user_accounts, log_in):
+
     '''
     This function allows users to change their password.
 
@@ -312,7 +314,6 @@ def change_password(user_accounts, log_in):
     - The old_password is the user's current password.
     - The new_password should be different from the old one.
     - The new_password fulfills the requirement in signup.
-
     '''
     username = input('Please provide your name: ')
 
@@ -334,6 +335,7 @@ def change_password(user_accounts, log_in):
 #==========================================================================================================================
 
 def delete_account(user_accounts, log_in, bank):
+
     '''
     Completely deletes the user from the online banking system.
     If the user exists in the user_accounts dictionary and the password is correct, and the user 
